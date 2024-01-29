@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShowService } from './show.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-injection';
+
+  constructor(private showService: ShowService) { }
+
+get items() {
+   return this.showService.items;
 }
+}
+
+
